@@ -1,8 +1,8 @@
 go File View
 ============
 
-Go File
-View是受kkFileView(https://gitee.com/kekingcn/file-online-preview.git)启发并基于其网站前端开发的。目前goFileView处于最原始的起步状态，相对简陋，相信随着不断完善成为一套强壮的系统。本人代码风格相对较”狂”，欢迎大家一起来提出建议和完善Go
+Go File View是受kkFileView( *https://gitee.com/kekingcn/file-online-preview.git*
+)启发并基于其网站前端开发的。目前goFileView处于最原始的起步状态，相对简陋，相信随着不断完善成为一套强壮的系统。本人代码风格相对较”狂”，欢迎大家一起来提出建议和完善Go
 File View。
 
 特别要感谢kkfileview的开源，让我可以使用它的前端页面直接开发。调用方式也在很大程度上参考了kkfileview。
