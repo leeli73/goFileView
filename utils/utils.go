@@ -49,7 +49,7 @@ func ConvertToImg(filePath string) string{
 	}
 	os.Mkdir("cache/convert/"+fileName, os.ModePerm)
 	commandName := "convert"
-	params := []string{"-density","150",filePath,"cache/convert/"+fileName+"/%d.jpg"}
+	params := []string{"-density","100",filePath,"cache/convert/"+fileName+"/%d.jpg"}
 	if _,ok := interactiveToexec(commandName,params);ok{
 		resultPath := "cache/convert/" + strings.Split(path.Base(filePath),".")[0]
 		if ok,_ := PathExists(resultPath);ok{
