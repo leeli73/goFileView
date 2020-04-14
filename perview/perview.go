@@ -8,7 +8,7 @@ import(
 	"time"
 	"strings"
 	"strconv"
-	//"net/url"
+	"net/url"
 	"net/http"
 	"io/ioutil"
 	"github.com/leeli73/goFileView/utils"
@@ -38,7 +38,12 @@ func Handle(w http.ResponseWriter, r *http.Request){
 	filePath := requestUrl[len(Pattern):]
 	if utils.ComparePath(filePath,"onlinePreview") {
 		r.ParseForm()
-		fileUrl := r.Form.Get("url")
+		submitUrl := r.Form.Get("url")
+		fileUrl,err := url.QueryUnescape(submitUrl)
+		if err != nil{
+			w.Write([]byte("URL解码出现错误"))
+			return
+		}
 		submitType := r.Form.Get("type")
 		if filePath,err := download.DownloadFile(fileUrl,"cache/download/"+path.Base(fileUrl));err == nil{
 			if submitType == "pdf" && (path.Ext(filePath) == ".pdf" || utils.IsInArr(path.Ext(filePath),AllOfficeEtx)){ //预留的PDF预览接口
