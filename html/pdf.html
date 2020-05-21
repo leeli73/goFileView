@@ -3,7 +3,7 @@
 <head>
     <title>GoFileView</title>
     <style>
-        .pdfobject-container {
+        .pdf {
             height: 30rem;
             border: 1rem solid rgba(0, 0, 0, .1);
         }
@@ -13,7 +13,7 @@
 <body>
     <div id="pdf"></div>
 </body>
-<script src="/js/pdfobject.js"></script>
+<script src="js/pdfobject.js"></script>
 <script>PDFObject.embed("{{url}}", "#pdf");</script>
 
 </html>

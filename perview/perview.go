@@ -49,7 +49,23 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 		submitType := r.Form.Get("type")
 		if filePath, err := download.DownloadFile(fileUrl, "cache/download/"+path.Base(fileUrl)); err == nil {
 			if submitType == "pdf" && (path.Ext(filePath) == ".pdf" || utils.IsInArr(path.Ext(filePath), AllOfficeEtx)) { //预留的PDF预览接口
-
+				if path.Ext(filePath) == ".pdf" {
+					dataByte := pdfPageDownload("cache/download/" + path.Base(filePath))
+					w.Header().Set("content-length", strconv.Itoa(len(dataByte)))
+					w.Header().Set("content-type", "text/html;charset=UTF-8")
+					w.Write([]byte(dataByte))
+					setFileMap(path.Base(filePath))
+				} else {
+					if pdfPath := utils.ConvertToPDF(filePath); pdfPath != "" {
+						dataByte := pdfPage("cache/pdf/" + path.Base(pdfPath))
+						w.Header().Set("content-length", strconv.Itoa(len(dataByte)))
+						w.Header().Set("content-type", "text/html;charset=UTF-8")
+						w.Write([]byte(dataByte))
+						setFileMap(path.Base(filePath))
+					} else {
+						w.Write([]byte("转换为PDF时出现错误!"))
+					}
+				}
 			} else if utils.IsInArr(path.Ext(filePath), AllImageEtx) {
 				dataByte := imagePage(filePath)
 				w.Header().Set("content-length", strconv.Itoa(len(dataByte)))
@@ -177,6 +193,24 @@ func imagePage(filePath string) []byte {
 				 </li>`
 	dataStr = strings.Replace(dataStr, "{{AllImages}}", htmlCode, -1)
 	dataStr = strings.Replace(dataStr, "{{FirstPath}}", imageUrl, -1)
+	dataByte = []byte(dataStr)
+	return dataByte
+}
+
+func pdfPage(filePath string) []byte {
+	dataByte, _ := ioutil.ReadFile("html/pdf.html")
+	dataStr := string(dataByte)
+	pdfUrl := "pdf_asset/" + path.Base(filePath)
+	dataStr = strings.Replace(dataStr, "{{url}}", pdfUrl, -1)
+	dataByte = []byte(dataStr)
+	return dataByte
+}
+
+func pdfPageDownload(filePath string) []byte {
+	dataByte, _ := ioutil.ReadFile("html/pdf.html")
+	dataStr := string(dataByte)
+	pdfUrl := "img_asset/" + path.Base(filePath)
+	dataStr = strings.Replace(dataStr, "{{url}}", pdfUrl, -1)
 	dataByte = []byte(dataStr)
 	return dataByte
 }

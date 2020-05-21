@@ -1,15 +1,16 @@
 go File View
 ============
 
-Go File View是受kkFileView( *https://gitee.com/kekingcn/file-online-preview.git* )启发并基于其网站前端开发的。目前goFileView处于最原始的起步状态，相对简陋，相信随着不断完善成为一套强壮的系统。本人代码风格相对较”狂”，欢迎大家一起来提出建议和完善Go File View。
+Go File View( *https://github.com/leeli73/goFileView.git* )是受kkFileView( *https://gitee.com/kekingcn/file-online-preview.git* )启发并基于其网站前端开发的。目前goFileView处于最原始的起步状态，相对简陋，相信随着不断完善成为一套强壮的系统。本人代码风格相对较”狂”，欢迎大家一起来提出建议和完善Go File View。
 
 特别要感谢kkfileview的开源，让我可以使用它的前端页面直接开发。调用方式也在很大程度上参考了kkfileview。
 
 从我有想法到写出这个beta版，只有半天时间，所以可能有很多问题，目前我也即将毕业，所以很少有时间能维护goFileView，如果您对goFileView有想法或者建议欢迎在issue中提问，我看到后会尽快完善的。
 
-![](media/mainshow.png)
+![](https://github.com/leeli73/goFileView/blob/master/media/mainshow.png)
 
 上面是goFileView的预览效果(顺便给我自己打打广告,手动滑稽)
+
 
 免费预览测试服务
 ====
@@ -18,12 +19,14 @@ Go File View是受kkFileView( *https://gitee.com/kekingcn/file-online-preview.gi
 
 这个服务可能随时取消，请大家不要将其引入自己的项目，以免造成意外的错误
 
-接口 http://gofileview.onlinecode.cn/perview/onlinePreview?url= 被预览文件的url
+普通预览接口 http://gofileview.onlinecode.cn/perview/onlinePreview?url=被预览文件的url
+
+PDF预览接口 http://gofileview.onlinecode.cn/perview/onlinePreview?url=被预览文件的url&type=pdf
 
 你可以直接访问 http://gofileview.onlinecode.cn/ 使用预置的文件查看goFileView的效果
 
 更新
-====
+====pdfPageDownloadpdfPageDownload
 
 2019年8月
 
@@ -37,6 +40,11 @@ Go File View是受kkFileView( *https://gitee.com/kekingcn/file-online-preview.gi
 2020年4月
 
     1.新增了对Windows系统的支持
+
+2020年5月
+
+    1.新增了对Office的PDF式预览
+    2.新增普通预览转PDF预览按钮
 
 目前已经完成
 ============
@@ -62,6 +70,15 @@ Go File View是受kkFileView( *https://gitee.com/kekingcn/file-online-preview.gi
 
     本地路径指定，省去下载步骤
 
+使用Docker快速部署
+====
+
+sudo docker pull leeli73/gofileview
+
+sudo docker run --name gofileview -ti -p 1180:80 leeli73/gofileview /root/go/src/github.com/leeli73/goFileView/goFileView
+
+你可以直接访问 http://127.0.0.1:1180/ 使用goFileView
+
 部署编译
 ========
 
@@ -73,7 +90,7 @@ Windows版
         1.安装Libreoffice,下载官方msi包,傻瓜式安装即可 (https://zh-cn.libreoffice.org)
 
         2.将Libreoffice安装路径下的program文件夹加入PATH中
-![](media/win_path.png)
+![](https://github.com/leeli73/goFileView/blob/master/media/win_path.png?raw=true)
 
         3.安装ImageMagick,官方包,傻瓜式安装即可,安装7.0以上版本 (https://ghostscript.com/download/gsdnld.html)
 

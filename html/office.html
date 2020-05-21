@@ -32,19 +32,7 @@
         window.onload = checkImgs;
         window.onscroll = throttle(checkImgs);
         function changePreviewType(previewType) {
-            alert("完善中...")
-            return
-            var url = window.location.href;
-            if (url.indexOf("officePreviewType=image") != -1) {
-                url = url.replace("officePreviewType=image", "officePreviewType=" + previewType);
-            } else {
-                url = url + "&officePreviewType=" + previewType;
-            }
-            if ('allImages' == previewType) {
-                window.open(url)
-            } else {
-                window.location.href = url;
-            }
+            window.location.href = window.location.href + "&type=pdf"
         }
     </script>
 </body>
