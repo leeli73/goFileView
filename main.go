@@ -49,52 +49,42 @@ func index(w http.ResponseWriter, r *http.Request) {
 			<tr>
 			  <td>test.docx</td>
 			  <td>docx</td>
-			  <td>http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.docx</td>
+			  <td>http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://onlinecode.cn/test.docx</td>
 			  <td>
 				<a
-				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.docx">普通预览</a>
+				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://onlinecode.cn/test.docx">普通预览</a>
 				<a
-				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.docx&type=pdf">PDF预览</a>
+				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://onlinecode.cn/test.docx&type=pdf">PDF预览</a>
 			  </td>
 			</tr>
 			<tr>
 			  <td>test.xlsx</td>
 			  <td>xlsx</td>
-			  <td>http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.xlsx</td>
+			  <td>http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://onlinecode.cn/test.xlsx</td>
 			  <td><a
-				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.xlsx">普通预览</a>
+				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://onlinecode.cn/test.xlsx">普通预览</a>
 				  <a
-				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.xlsx&type=pdf">PDF预览</a>
+				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://onlinecode.cn/test.xlsx&type=pdf">PDF预览</a>
 			  </td>
 			</tr>
 			<tr>
 			  <td>test.pptx</td>
 			  <td>pptx</td>
-			  <td>http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.pptx</td>
+			  <td>http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://onlinecode.cn/test.pptx</td>
 			  <td><a
-				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.pptx">普通预览</a>
+				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://onlinecode.cn/test.pptx">普通预览</a>
 				  <a
-				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.pptx&type=pdf">PDF预览</a>
+				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://onlinecode.cn/test.pptx&type=pdf">PDF预览</a>
 			  </td>
 			</tr>
 			<tr>
 			  <td>test.pdf</td>
 			  <td>pdf</td>
-			  <td>http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.pdf</td>
+			  <td>http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://onlinecode.cn/test.pdf</td>
 			  <td><a
-				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.pdf">普通预览</a>
+				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://onlinecode.cn/test.pdf">普通预览</a>
 				  <a
-				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.pdf&type=pdf">PDF预览</a>
-			  </td>
-			</tr>
-			<tr>
-			  <td>test.txt</td>
-			  <td>txt</td>
-			  <td>http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.txt</td>
-			  <td><a
-				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.txt">普通预览</a>
-				  <a
-				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://123.207.241.119/test.txt&type=pdf">PDF预览</a>
+				  href="http://gofileview.onlinecode.cn/perview/onlinePreview?url=http://onlinecode.cn/test.pdf&type=pdf">PDF预览</a>
 			  </td>
 			</tr>
 		  </tbody>

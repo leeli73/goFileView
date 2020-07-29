@@ -26,7 +26,7 @@ PDF预览接口 http://gofileview.onlinecode.cn/perview/onlinePreview?url=被预
 你可以直接访问 http://gofileview.onlinecode.cn/ 使用预置的文件查看goFileView的效果
 
 更新
-====pdfPageDownloadpdfPageDownload
+====
 
 2019年8月
 
@@ -45,6 +45,12 @@ PDF预览接口 http://gofileview.onlinecode.cn/perview/onlinePreview?url=被预
 
     1.新增了对Office的PDF式预览
     2.新增普通预览转PDF预览按钮
+
+2020年7月
+
+    1.修复缓存监控协程异常退出和缓存删除失败的BUG
+    2.简单统一日志输出
+    3.添加开源协议
 
 目前已经完成
 ============

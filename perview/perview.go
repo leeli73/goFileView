@@ -243,16 +243,18 @@ func setFileMap(fileName string) {
 
 func Monitor() {
 	log.Println("Info: Starting Monitor Thread")
-	for _, v := range AllFile {
-		if time.Now().Unix()-v.LastActiveTime > ExpireTime {
-			os.RemoveAll("cache/convert/" + v.Md5)
-			os.Remove("cache/download/" + v.Md5 + v.Ext)
-			os.Remove("cache/download/" + v.Md5 + ".pdf")
-			log.Println("Info: cache ", v.Md5, " delete")
-			delete(AllFile, v.Md5)
+	for {
+		for _, v := range AllFile {
+			if time.Now().Unix()-v.LastActiveTime > ExpireTime {
+				os.RemoveAll("cache/convert/" + v.Md5)
+				os.Remove("cache/download/" + v.Md5 + v.Ext)
+				os.Remove("cache/pdf/" + v.Md5 + ".pdf")
+				log.Println("Cache file ", v.Md5, " delete")
+				delete(AllFile, v.Md5)
+			}
 		}
+		time.Sleep(time.Second * 60)
 	}
-	time.Sleep(time.Second * 3600)
 }
 
 func StartServer() {

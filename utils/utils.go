@@ -40,6 +40,7 @@ func ConvertToPDF(filePath string) string {
 	if _, ok := interactiveToexec(commandName, params); ok {
 		resultPath := "cache/pdf/" + strings.Split(path.Base(filePath), ".")[0] + ".pdf"
 		if ok, _ := PathExists(resultPath); ok {
+			log.Printf("Convert <%s> to pdf\n", path.Base(filePath))
 			return resultPath
 		} else {
 			return ""
@@ -69,6 +70,7 @@ func ConvertToImg(filePath string) string {
 	if _, ok := interactiveToexec(commandName, params); ok {
 		resultPath := "cache/convert/" + strings.Split(path.Base(filePath), ".")[0]
 		if ok, _ := PathExists(resultPath); ok {
+			log.Printf("Convert <%s> to images\n", path.Base(filePath))
 			return resultPath
 		} else {
 			return ""
@@ -81,10 +83,8 @@ func ConvertToImg(filePath string) string {
 func interactiveToexec(commandName string, params []string) (string, bool) {
 	cmd := exec.Command(commandName, params...)
 	buf, err := cmd.Output()
-	log.Println(cmd.Args)
 	w := bytes.NewBuffer(nil)
 	cmd.Stderr = w
-	log.Printf("%s\n", w)
 	if err != nil {
 		log.Println("Error: <", err, "> when exec command read out buffer")
 		return "", false
