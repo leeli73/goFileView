@@ -11,6 +11,17 @@ Go File View( *https://github.com/leeli73/goFileView.git* )是受kkFileView( *ht
 
 上面是goFileView的预览效果(顺便给我自己打打广告,手动滑稽)
 
+此次版本更新后出现的错误
+====
+
+近期的版本更新后，goFileView Linux版本的图片式预览出现问题
+
+免费的预览测试服务受到影响，请大家目前使用PDF式进行预览
+
+我将会尽快找到问题，并及时修复
+
+同时Docker镜像的问题也已经找到原因，将在下个版本修复
+
 
 免费预览测试服务
 ====
@@ -24,6 +35,8 @@ Go File View( *https://github.com/leeli73/goFileView.git* )是受kkFileView( *ht
 PDF预览接口 http://gofileview.onlinecode.cn/perview/onlinePreview?url=被预览文件的url&type=pdf
 
 你可以直接访问 http://gofileview.onlinecode.cn/ 使用预置的文件查看goFileView的效果
+
+
 
 更新
 ====

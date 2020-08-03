@@ -246,11 +246,16 @@ func Monitor() {
 	for {
 		for _, v := range AllFile {
 			if time.Now().Unix()-v.LastActiveTime > ExpireTime {
-				os.RemoveAll("cache/convert/" + v.Md5)
-				os.Remove("cache/download/" + v.Md5 + v.Ext)
-				os.Remove("cache/pdf/" + v.Md5 + ".pdf")
-				log.Println("Cache file ", v.Md5, " delete")
-				delete(AllFile, v.Md5)
+				if v.Md5 != "" {
+					os.RemoveAll("cache/convert/" + v.Md5)
+					os.Remove("cache/download/" + v.Md5 + v.Ext)
+					os.Remove("cache/pdf/" + v.Md5 + ".pdf")
+					log.Println("Cache file ", v.Md5, " delete")
+					delete(AllFile, v.Md5)
+				} else {
+					delete(AllFile, v.Md5)
+					log.Println("Cache file ", v.Md5, " delete with error")
+				}
 			}
 		}
 		time.Sleep(time.Second * 60)
